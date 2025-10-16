@@ -398,6 +398,49 @@ a, button {
 .projects-strong-orb-2 { position: absolute; right: 4%; top: 10px; width: 360px; height: 360px; background: radial-gradient(circle at 40% 40%, rgba(124,58,237,0.12), rgba(99,102,241,0.02)); border-radius: 50%; filter: blur(70px); pointer-events: none; }
 
 /* Add extra purple visual elements inside projects section */
+
+/* FAQ section styles */
+.faq-grid { position: relative; z-index: 10; }
+.faq-item { transition: box-shadow .18s ease, transform .18s ease; }
+.faq-item[open] { box-shadow: 0 18px 40px rgba(15,23,42,0.06); transform: translateY(-4px); }
+.faq-summary { list-style: none; }
+.faq-summary::-webkit-details-marker { display: none; }
+.faq-summary:focus { outline: none; }
+.faq-chevron { transition: transform .18s ease; }
+details[open] .faq-chevron { transform: rotate(180deg); }
+.faq-panel { transition: max-height 0.28s ease, opacity 0.18s ease; }
+
+/* Small responsive tweaks */
+@media (max-width: 768px) {
+    .faq-grid { gap: 1rem; }
+    .faq-item { padding: 1rem; }
+}
+
+/* Improved FAQ hover and spacing polish */
+.faq-item:hover { box-shadow: 0 22px 48px rgba(15,23,42,0.06); }
+.faq-summary { padding: 0.1rem 0.25rem; }
+.faq-panel { opacity: 1; }
+
+/* FAQ background visuals */
+.faq-section { position: relative; overflow: hidden; }
+.faq-orb-left{ position: absolute; left: -6%; top: -20%; width: 360px; height: 360px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.12), rgba(99,102,241,0.03)); filter: blur(80px); pointer-events:none; z-index:0 }
+.faq-orb-right{ position: absolute; right: -8%; bottom: -10%; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle at 40% 40%, rgba(99,102,241,0.10), rgba(124,58,237,0.02)); filter: blur(60px); pointer-events:none; z-index:0 }
+.faq-pattern{ position:absolute; inset:0; background-image: radial-gradient(circle at 10px 10px, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 36px 36px; opacity:0.6; mix-blend-mode: overlay; pointer-events:none; z-index:0 }
+
+/* Make sure FAQ content sits above visuals */
+.faq-section > .max-w-7xl { position: relative; z-index: 10 }
+
+/* FAQ card details polish */
+.faq-item summary { outline: none; }
+.faq-item[open] { background: linear-gradient(180deg, #ffffff 0%, #fbfcff 100%); }
+.faq-summary { font-size: 1rem; }
+.faq-panel { color: #475569; font-size: 0.95rem; line-height: 1.6 }
+
+@media (max-width: 1024px){
+    .faq-orb-left, .faq-orb-right { display: none }
+}
+
+
 .projects-section-extra-1 { position: absolute; left: 10%; top: -30px; width: 420px; height: 220px; background: radial-gradient(circle at 30% 30%, rgba(129,90,245,0.12), rgba(99,102,241,0.02)); border-radius: 50%; filter: blur(60px); pointer-events: none; }
 .projects-section-extra-2 { position: absolute; right: 8%; top: 40px; width: 300px; height: 300px; background: radial-gradient(circle at 40% 40%, rgba(124,58,237,0.14), rgba(99,102,241,0.03)); border-radius: 50%; filter: blur(70px); pointer-events: none; }
 

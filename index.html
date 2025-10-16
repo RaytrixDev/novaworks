@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="NovaWorks - Professional Web Agency in Nederland. Webdesign, Webdevelopment, Responsive Design en SEO Diensten.">
     <title>NovaWorks - Web Agency | Professionele Websites op Maat</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Primary crisp SVG favicon (modern browsers) -->
+    <link rel="icon" href="assets/images/favicon.svg?v=2" type="image/svg+xml">
+    <!-- Fallback PNGs for older browsers and larger sizes (correct PNG file) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png?v=2">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/novaworks.png?v=2">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
     <script>
@@ -205,6 +209,7 @@
         <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
     </section>
 
+    
     <!-- Features Section -->
     <section class="relative py-24 overflow-hidden bg-gradient-to-b from-white via-indigo-50/30 to-white">
         <!-- Enhanced background elements -->
@@ -745,6 +750,86 @@
         </div>
 
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+    </section>
+
+    <!-- Veelgestelde vragen (FAQ) - improved and placed under Uitgelichte Projecten -->
+    <section class="relative py-20 bg-gradient-to-b from-white via-indigo-50/10 to-white overflow-hidden faq-section" aria-labelledby="faq-heading-improved">
+        <!-- Decorative background visuals for FAQ -->
+        <div class="faq-orb-left"></div>
+        <div class="faq-orb-right"></div>
+        <div class="faq-pattern" aria-hidden="true"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center justify-center mb-4">
+                    <span class="inline-flex items-center justify-center h-3 w-3 rounded-full bg-indigo-600 mr-2 shadow-sm"></span>
+                    <span class="text-sm font-medium text-indigo-700">Veelgestelde vragen</span>
+                </div>
+
+                <h2 id="faq-heading-improved" class="text-3xl font-bold tracking-tight md:text-4xl mb-4">Heb je een vraag? Wij helpen graag.</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hier vind je antwoorden op de meest gestelde vragen over onze werkwijze, planning en support. Staat je vraag er niet tussen? Neem gerust contact op.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 faq-grid">
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative" style="min-height:220px;">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Algemene vragen</h3>
+                        <div class="space-y-3">
+                            <details class="faq-item p-4 rounded-lg bg-gray-50" open>
+                                <summary class="faq-summary flex items-center justify-between text-gray-900 font-medium cursor-pointer">Hoe verloopt het ontwikkelproces van een website?
+                                    <svg class="faq-chevron w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </summary>
+                                <div class="faq-panel mt-3 text-gray-600">We starten met een intake, maken wireframes en designs, bouwen vervolgens in sprints en leveren op met nazorg en training. Communicatie is helder en gepland per milestone.</div>
+                            </details>
+
+                            <details class="faq-item p-4 rounded-lg bg-gray-50">
+                                <summary class="faq-summary flex items-center justify-between text-gray-900 font-medium cursor-pointer">Wat kost een website bij NovaWorks?
+                                    <svg class="faq-chevron w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </summary>
+                                <div class="faq-panel mt-3 text-gray-600">Kosten zijn afhankelijk van functionaliteit en scope. We maken een heldere offerte na een korte intake zodat je precies weet wat inbegrepen is.</div>
+                            </details>
+
+                            <details class="faq-item p-4 rounded-lg bg-gray-50">
+                                <summary class="faq-summary flex items-center justify-between text-gray-900 font-medium cursor-pointer">Hoe snel kan een website live zijn?
+                                    <svg class="faq-chevron w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </summary>
+                                <div class="faq-panel mt-3 text-gray-600">Een eenvoudige site kan binnen 4–6 weken; uitgebreide projecten met maatwerk en integraties vragen doorgaans 8+ weken, afhankelijk van feedbackcycli.</div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 relative" style="min-height:220px;">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Onderhoud & expertise</h3>
+                        <div class="space-y-3">
+                            <details class="faq-item p-4 rounded-lg bg-gray-50">
+                                <summary class="faq-summary flex items-center justify-between text-gray-900 font-medium cursor-pointer">Bieden jullie ook onderhoud en support?
+                                    <svg class="faq-chevron w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </summary>
+                                <div class="faq-panel mt-3 text-gray-600">Ja. We bieden onderhoudscontracten, updates, backups en support op maat, zodat je website veilig en actueel blijft.</div>
+                            </details>
+
+                            <details class="faq-item p-4 rounded-lg bg-gray-50">
+                                <summary class="faq-summary flex items-center justify-between text-gray-900 font-medium cursor-pointer">Werken jullie met toegankelijkheid en SEO?
+                                    <svg class="faq-chevron w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </summary>
+                                <div class="faq-panel mt-3 text-gray-600">Absoluut. We passen SEO best practices toe tijdens development en kunnen sites ontwikkelen volgens WCAG-richtlijnen (toegankelijkheid) indien gewenst.</div>
+                            </details>
+
+                            <details class="faq-item p-4 rounded-lg bg-gray-50">
+                                <summary class="faq-summary flex items-center justify-between text-gray-900 font-medium cursor-pointer">Hoe zit het met hosting en domein?
+                                    <svg class="faq-chevron w-5 h-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+                                </summary>
+                                <div class="faq-panel mt-3 text-gray-600">We kunnen hosting en domeinregistratie regelen, of met jouw bestaande provider samenwerken. We adviseren maatwerk voor performance en security.</div>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 text-sm text-gray-600">Nog vragen? <a href="pages/contact.html" class="text-indigo-600 font-medium underline">Neem contact op</a> — we helpen je graag persoonlijk.</div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CTA Section -->
