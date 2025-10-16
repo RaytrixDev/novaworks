@@ -193,6 +193,229 @@ a, button {
     animation: slideFromRight 0.8s ease-out;
 }
 
+/* Projects cards enhancements */
+.projects-card {
+    border: 1px solid rgba(15, 23, 42, 0.03);
+    transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s;
+}
+.projects-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* Project link CTA - black, link-like with icon and hover */
+.project-link-cta{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .18s ease;
+}
+.project-link-cta svg{ 
+    transform: translateX(0);
+    transition: transform .18s ease;
+}
+.project-link-cta:hover{
+    color: #111;
+}
+.project-link-cta:hover svg{
+    transform: translateX(4px);
+}
+
+/* Image hover highlight for project cards */
+.project-image-hover{
+    transition: transform .35s ease, filter .35s ease;
+}
+.project-image-hover:hover{
+    transform: scale(1.03);
+    filter: saturate(1.05) drop-shadow(0 10px 18px rgba(0,0,0,0.08));
+}
+
+/* Colored list bullets for specific project lists */
+.bijrichting-bullets li::marker{
+    color: #059669; /* emerald-600 */
+}
+.toegankelijkheid-bullets li::marker{
+    color: #7c3aed; /* violet-600 */
+}
+
+/* Slightly stronger black font for project CTA */
+.project-link-cta{
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    letter-spacing: -0.01em;
+}
+
+/* Extra decorative accent behind projects section */
+.projects-decor-accent{
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+    width: 44rem;
+    height: 10rem;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, rgba(124,58,237,0.08), rgba(99,102,241,0.06));
+    filter: blur(52px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* New visible background visuals for projects section */
+.projects-bg-visual{ position:absolute; pointer-events:none; z-index:0; opacity:0.85 }
+.projects-bg-orb-left{ left: -6%; top: -6%; width: 480px; height: 480px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.18), rgba(99,102,241,0.06)); filter: blur(60px); }
+.projects-bg-center-wave{ left:50%; top:20px; transform:translateX(-50%); width: 900px; height:240px; border-radius:9999px; background: linear-gradient(90deg, rgba(99,102,241,0.12), rgba(124,58,237,0.08)); filter: blur(36px); }
+.projects-bg-orb-right{ right:-8%; bottom:-6%; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle at 40% 40%, rgba(99,102,241,0.12), rgba(124,58,237,0.04)); filter: blur(56px); }
+
+/* Make sure main content sits above visuals */
+.projects * { position: relative; z-index: 10 }
+
+/* Unified project CTA button (black, link-like but fixed height) */
+.project-cta-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    color: #000;
+    font-weight: 500; /* lighter */
+    padding: .5rem .75rem;
+    height: 40px;
+    line-height: 1;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: color .12s ease;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    vertical-align: middle;
+}
+.project-cta-btn svg{transform: translateX(0); transition: transform .18s ease}
+.project-cta-btn:hover svg{transform: translateX(4px)}
+.project-cta-btn:hover{transform: none}
+.project-cta-btn:focus{outline: 3px solid rgba(0,0,0,0.06); outline-offset: 2px}
+
+/* Project card uniform sizing and cleaner look */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 360px; /* more compact */
+}
+.project-card .p-6 { padding: 1.25rem; }
+
+/* Card body wrapper for tighter control - make body stretch so CTA sits at same baseline */
+.card-body { padding: 1.25rem; display: flex; flex-direction: column; gap: .5rem; justify-content: space-between; flex: 1 1 auto; }
+
+/* Typography tweaks */
+.card-body h4 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; }
+.card-body p { color: #475569; margin-top: 0.25rem; font-size: 0.92rem; line-height: 1.45; font-weight: 400 }
+
+/* Subtle link-style CTA used inside compact cards */
+.project-cta-link{ display:inline-flex; align-items:center; gap:.5rem; color:#374151; text-decoration:none; font-size:0.95rem; font-weight:600 }
+.project-cta-link svg{ transition: transform .18s ease }
+.project-cta-link:hover svg{ transform: translateX(3px) }
+.project-cta-link:hover{ color:#111 }
+
+/* Ensure the CTA block in the card body is pushed to the bottom so CTAs align */
+.card-body > .mt-5 { margin-top: auto; display: flex; flex-direction: column; }
+.card-body > .mt-5 > .mt-3 { margin-top: auto; display:flex; justify-content:center }
+.project-cta-link{ font-weight: 500; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; display:inline-flex; align-items:center }
+
+/* Ensure CTA baseline aligns by giving the link wrapper a consistent height */
+.card-body > .mt-5 > .mt-3 > .project-cta-link{ min-height: 36px; padding-top:4px; padding-bottom:4px }
+
+/* Small purple CTA for featured hero */
+.project-cta-small{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    background: transparent;
+    color: #6d28d9; /* purple-700 */
+    padding: 0;
+    border-radius: 0;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-decoration: underline;
+}
+.project-cta-small svg{ transition: transform .18s ease }
+.project-cta-small:hover svg{ transform: translateX(4px) }
+
+/* Small utility for thin text badges */
+.badge-xs { font-size: 12px; padding: 4px 8px; }
+
+/* Responsive tweaks for project image heights */
+@media (min-width: 1024px) {
+    .project-image-lg { height: 14rem; }
+}
+
+@media (max-width: 640px) {
+    .project-image-lg { height: 12rem; }
+}
+
+/* Remove strong shadows on project images (cleaner look) */
+.project-image-no-shadow img,
+.project-image-no-shadow { box-shadow: none !important; }
+
+/* Purple accents variable-like helpers */
+:root {
+    --nova-purple-100: rgba(129, 90, 245, 0.08);
+    --nova-purple-200: rgba(124, 58, 237, 0.12);
+    --nova-purple-300: rgba(99, 102, 241, 0.16);
+}
+
+.projects-bg-accent { background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(99,102,241,0.02)); }
+
+/* Large project hero and boxes */
+.projects-hero {
+    border-radius: 1rem;
+}
+
+.projects-hero img { display: block; width: 100%; height: auto; }
+
+.project-large-box { min-height: 180px; }
+
+/* Slightly stronger purple accents to match other sections */
+.purple-orb-1 { position: absolute; left: -120px; top: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.12), rgba(99,102,241,0.02)); filter: blur(60px); pointer-events: none; }
+.purple-orb-2 { position: absolute; right: -80px; bottom: -40px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.08), rgba(99,102,241,0.01)); filter: blur(40px); pointer-events: none; }
+
+/* Tighter card inner spacing on large boxes */
+.bg-white.rounded-2xl.p-6 { padding: 1.5rem; }
+
+/* Ensure buttons have consistent min-width */
+.projects-btn { min-width: 140px; }
+
+/* Featured pill style */
+.featured-pill { font-size: 13px; padding: 6px 10px; border-radius: 999px; box-shadow: 0 6px 20px rgba(15,23,42,0.06); }
+
+/* Image overlay badges (top-left) */
+.img-overlay-badge { position: absolute; left: 14px; top: 14px; background: rgba(255,255,255,0.95); padding: 6px 10px; border-radius: 999px; font-size: 12px; box-shadow: 0 6px 18px rgba(15,23,42,0.06); }
+
+/* Link-style CTA (cleaner) */
+.project-link-cta { color: var(--link-color, #4f46e5); font-weight: 600; display: inline-flex; align-items: center; gap: 8px; }
+.project-link-cta svg { opacity: 0.9; }
+.project-link-cta:hover { text-decoration: underline; }
+
+/* Stronger purple background accents */
+.projects-strong-orb-1 { position: absolute; left: 6%; top: -40px; width: 520px; height: 320px; background: radial-gradient(circle at 20% 20%, rgba(129,90,245,0.14), rgba(99,102,241,0.02)); border-radius: 50%; filter: blur(80px); pointer-events: none; }
+.projects-strong-orb-2 { position: absolute; right: 4%; top: 10px; width: 360px; height: 360px; background: radial-gradient(circle at 40% 40%, rgba(124,58,237,0.12), rgba(99,102,241,0.02)); border-radius: 50%; filter: blur(70px); pointer-events: none; }
+
+/* Add extra purple visual elements inside projects section */
+.projects-section-extra-1 { position: absolute; left: 10%; top: -30px; width: 420px; height: 220px; background: radial-gradient(circle at 30% 30%, rgba(129,90,245,0.12), rgba(99,102,241,0.02)); border-radius: 50%; filter: blur(60px); pointer-events: none; }
+.projects-section-extra-2 { position: absolute; right: 8%; top: 40px; width: 300px; height: 300px; background: radial-gradient(circle at 40% 40%, rgba(124,58,237,0.14), rgba(99,102,241,0.03)); border-radius: 50%; filter: blur(70px); pointer-events: none; }
+
+/* Cleaner 'Bekijk website' button style */
+.projects-btn {
+    background: white;
+    border-radius: 8px;
+    padding: 8px 14px;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.projects-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09); }
+
+/* Slightly larger responsive image heights */
+@media (min-width: 1024px) {
+    .projects .w-full.h-56 { height: 18rem; }
+}
+
 /* Gradient Animation */
 @keyframes gradient {
     0% {
