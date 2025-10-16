@@ -750,16 +750,13 @@
         </div>
 
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
-    </section>
+    <!-- Decorative background visuals for FAQ -->
+    <div class="faq-orb-left"></div>
+    <div class="faq-orb-right"></div>
+    <div class="faq-pattern" aria-hidden="true"></div>
 
-    <!-- Veelgestelde vragen (FAQ) - improved and placed under Uitgelichte Projecten -->
-    <section class="relative py-20 bg-gradient-to-b from-white via-indigo-50/10 to-white overflow-hidden faq-section" aria-labelledby="faq-heading-improved">
-        <!-- Decorative background visuals for FAQ -->
-        <div class="faq-orb-left"></div>
-        <div class="faq-orb-right"></div>
-        <div class="faq-pattern" aria-hidden="true"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <!-- Added wrapper to force visual gap between Projects and FAQ -->
+    <div class="faq-top-gap mt-12 md:mt-20 lg:mt-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="text-center mb-12">
                 <div class="inline-flex items-center justify-center mb-4">
                     <span class="inline-flex items-center justify-center h-3 w-3 rounded-full bg-indigo-600 mr-2 shadow-sm"></span>
@@ -838,9 +835,15 @@
         <div class="absolute -left-32 -top-32 w-96 h-96 rounded-full bg-indigo-500/30 blur-3xl pointer-events-none"></div>
         <div class="absolute -right-32 -bottom-32 w-96 h-96 rounded-full bg-purple-500/25 blur-3xl pointer-events-none"></div>
 
-        <!-- Top wave -->
-        <svg class="absolute left-0 right-0 -top-6 w-full" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C240,120 480,0 720,40 C960,80 1200,20 1440,60 L1440 0 L0 0 Z" fill="rgba(255,255,255,0.03)"/>
+        <!-- Top wave (smooth blend from previous white section into the CTA purple) -->
+        <svg class="absolute left-0 right-0 -top-6 w-full cta-wave" viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="ctaTopGradient" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(255,255,255,1)"/>
+                    <stop offset="100%" stop-color="rgba(79,70,229,0.12)"/>
+                </linearGradient>
+            </defs>
+            <path d="M0,40 C240,120 480,0 720,40 C960,80 1200,20 1440,60 L1440 0 L0 0 Z" fill="url(#ctaTopGradient)"/>
         </svg>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -933,6 +936,17 @@
 
     <!-- Footer -->
     <footer class="relative overflow-hidden pt-16 bg-gradient-to-b from-gray-50 via-white to-gray-50 border-t border-gray-200">
+        <!-- Decorative top wave to blend CTA into footer -->
+        <svg class="footer-top-wave absolute left-0 right-0 -top-16 w-full pointer-events-none" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="footerTopGradient2" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(99,102,241,0.14)"/>
+                    <stop offset="45%" stop-color="rgba(124,58,237,0.08)"/>
+                    <stop offset="100%" stop-color="rgba(250,250,250,0.0)"/>
+                </linearGradient>
+            </defs>
+            <path d="M0,40 C200,120 400,0 720,40 C1040,80 1240,20 1440,60 L1440 120 L0 120 Z" fill="url(#footerTopGradient2)" opacity="0.95"></path>
+        </svg>
         <!-- COMPLETELY NEW BACKGROUND DESIGN -->
 
         <!-- Subtle professional footer background -->

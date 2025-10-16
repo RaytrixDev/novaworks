@@ -422,7 +422,7 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 .faq-panel { opacity: 1; }
 
 /* FAQ background visuals */
-.faq-section { position: relative; overflow: hidden; }
+.faq-section { position: relative; overflow: hidden; padding-top: 1.5rem; }
 .faq-orb-left{ position: absolute; left: -6%; top: -20%; width: 360px; height: 360px; border-radius:50%; background: radial-gradient(circle at 30% 30%, rgba(124,58,237,0.12), rgba(99,102,241,0.03)); filter: blur(80px); pointer-events:none; z-index:0 }
 .faq-orb-right{ position: absolute; right: -8%; bottom: -10%; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle at 40% 40%, rgba(99,102,241,0.10), rgba(124,58,237,0.02)); filter: blur(60px); pointer-events:none; z-index:0 }
 .faq-pattern{ position:absolute; inset:0; background-image: radial-gradient(circle at 10px 10px, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 36px 36px; opacity:0.6; mix-blend-mode: overlay; pointer-events:none; z-index:0 }
@@ -436,9 +436,75 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 .faq-summary { font-size: 1rem; }
 .faq-panel { color: #475569; font-size: 0.95rem; line-height: 1.6 }
 
-@media (max-width: 1024px){
+@media (max-width: 768px){
     .faq-orb-left, .faq-orb-right { display: none }
 }
+
+@media (max-width: 640px) {
+    .faq-section { padding-top: 2.25rem; }
+}
+
+/* =========================
+   Enhanced FAQ visuals
+   ========================= */
+/* wrapper helper removed (no-op) */
+/* Make FAQ cards equal height and visually prominent */
+.faq-grid > div > .bg-white {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 260px;
+    transition: transform 300ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms ease;
+}
+.faq-grid > div > .bg-white:hover { transform: translateY(-6px); box-shadow: 0 30px 60px rgba(15,23,42,0.08); }
+
+/* Summary styling: larger clickable area and a refined chevron */
+.faq-item summary.faq-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(250,250,252,0.65));
+    box-shadow: 0 6px 18px rgba(15,23,42,0.03);
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.faq-item summary.faq-summary:hover { box-shadow: 0 12px 28px rgba(15,23,42,0.06); }
+
+.faq-item summary .faq-title { margin-right: 1rem; font-size: 1rem; }
+
+/* Chevron icon */
+.faq-item .faq-chevron {
+    width: 22px; height: 22px; display: inline-block; flex-shrink: 0; transition: transform 240ms ease;
+    color: #6d28d9; /* purple */
+}
+.faq-item[open] .faq-chevron { transform: rotate(180deg); }
+
+/* Smooth collapsing panel using max-height */
+.faq-panel { max-height: 0; overflow: hidden; opacity: 0; padding: 0 0.5rem; }
+.faq-item[open] .faq-panel { max-height: 800px; opacity: 1; padding: 0.75rem 0.5rem; transition: max-height 420ms cubic-bezier(.22,.9,.36,1), opacity 220ms ease, padding 220ms ease; }
+
+/* Better spacing inside panels */
+.faq-panel p, .faq-panel li { margin-bottom: 0.6rem; color: #475569; }
+
+/* Make summary text and icons align nicely on small screens */
+@media (max-width: 768px) {
+    .faq-item summary.faq-summary { padding: 0.65rem; }
+    .faq-grid > div > .bg-white { min-height: auto; }
+}
+
+/* Decorative orbs sit behind FAQ cards and are slightly dimmer here to avoid distraction */
+.faq-orb-left, .faq-orb-right { opacity: 0.7; filter: blur(64px); }
+
+/* Small visual polish for FAQ headings */
+#faq-heading-improved { letter-spacing: -0.02em; }
+
+/* Accessibility: focus styles for keyboard users */
+.faq-item summary.faq-summary:focus { box-shadow: 0 0 0 4px rgba(124,58,237,0.12); outline: none; }
+
 
 
 .projects-section-extra-1 { position: absolute; left: 10%; top: -30px; width: 420px; height: 220px; background: radial-gradient(circle at 30% 30%, rgba(129,90,245,0.12), rgba(99,102,241,0.02)); border-radius: 50%; filter: blur(60px); pointer-events: none; }
@@ -529,5 +595,71 @@ details[open] .faq-chevron { transform: rotate(180deg); }
 
 .animate-slide-right {
     animation: slideFromRight 0.8s ease-out forwards;
+}
+
+/* CTA <-> Footer transition helpers - appended */
+.cta-wave {
+    height: 120px;
+    transform: translateZ(0);
+    opacity: 0.95;
+    filter: blur(0.4px);
+}
+.cta-wave path { transition: opacity 350ms ease; }
+
+.cta-wave-bottom { height: 140px; }
+
+.footer-top-blend {
+    height: 48px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+    pointer-events: none;
+    mix-blend-mode: normal;
+}
+
+footer { position: relative; z-index: 10; }
+footer::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 64px;
+    background: linear-gradient(180deg, rgba(17,24,39,0.06), rgba(17,24,39,0.0));
+    pointer-events: none;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .cta-wave, .cta-wave-bottom { display: none; }
+    .footer-top-blend { height: 32px; }
+    footer::before { height: 40px; }
+}
+
+/* Footer top wave styling */
+.footer-top-wave { z-index: 12; }
+.footer-top-wave path { filter: blur(0.6px); transition: transform 320ms ease, opacity 220ms ease; }
+
+/* Slightly stronger footer top overlay to visually pick up CTA hues */
+footer::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 86px;
+    background: linear-gradient(180deg, rgba(79,70,229,0.08), rgba(255,255,255,0.0));
+    pointer-events: none;
+    z-index: 11;
+}
+
+/* Small separator shadow so the footer content reads clearly against the CTA */
+.footer-seam {
+    position: absolute;
+    left: 0; right: 0; top: 76px;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(0,0,0,0.03));
+    opacity: 0.85;
+    pointer-events: none;
+    z-index: 13;
+}
+
+@media (max-width: 768px) {
+    .footer-top-wave { display: none; }
+    .footer-seam { top: 56px; }
 }
 
